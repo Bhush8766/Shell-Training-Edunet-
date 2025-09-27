@@ -25,7 +25,7 @@ Such a system is crucial in preventing fraudulent, advertising, and malicious me
 
 ## 🗂️ Dataset
 
-We used the **SMS Spam Collection Dataset** available from [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/sms+spam+collection).
+We used the **SMS Spam Collection Dataset** available from [SMS Spam Detection 👆]([https://archive.ics.uci.edu/ml/datasets/sms+spam+collection](https://www.kaggle.com/datasets/datajameson/smsspamcollection)).
 
 * Total messages: **5574**
 * Labels:
