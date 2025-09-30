@@ -2,6 +2,6 @@ flask
 scikit-learn
 pandas
 
-echo "flask
+
 gunicorn
 flask-cors" > requirements.txt
