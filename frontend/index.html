@@ -90,32 +90,32 @@
 
   <div class="card">
     <textarea id="message" placeholder="Enter SMS message here..."></textarea>
-    <button onclick="checkSpam()">Check</button>
+    <button onclick="sendMessage()">Check</button>
+
     <div id="result"></div>
   </div>
 
   <script>
-    
-    async function sendMessage() {
-  const msg = document.getElementById("msg").value;
+  
+async function sendMessage() {
+    const msg = document.getElementById("msg").value;
 
-  try {
-    const res = await fetch("https://shell-training-edunet-07.onrender.com/predict", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: msg })
-    });
+    try {
+        const res = await fetch("https://shell-training-edunet-07.onrender.com/predict", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: msg })
+        });
 
-    if (!res.ok) throw new Error("Network response was not ok");
+        const data = await res.json();
+        document.getElementById("output").innerText = "Prediction: " + data.prediction;
 
-    const data = await res.json();
-    document.getElementById("output").innerText = data.prediction;
-
-  } catch (err) {
-    console.error("Error connecting to backend:", err);
-    document.getElementById("output").innerText = "Error connecting to backend";
-  }
+    } catch (err) {
+        console.error(err);
+        document.getElementById("output").innerText = "Error connecting to backend";
+    }
 }
+
   </script>
 </body>
 </html>
