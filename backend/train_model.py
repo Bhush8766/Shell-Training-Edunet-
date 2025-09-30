@@ -19,8 +19,8 @@ X_train_txt, X_test_txt, y_train, y_test = train_test_split(
 
 # Fit vectorizer only on training data
 vectorizer = CountVectorizer()
-X_train = vectorizer.fit_transform(X_train_txt)  # fit_transform for train set
-X_test = vectorizer.transform(X_test_txt)        # transform test set only
+X_train = vectorizer.fit_transform(X_train_txt)  # ONLY here
+X_test = vectorizer.transform(X_test_txt)        # no fit here
 
 # Train model
 model = MultinomialNB()
@@ -44,7 +44,6 @@ with open("sms_spam_model.pkl", "wb") as f:
 with open("vectorizer.pkl", "wb") as f:
     pickle.dump(vectorizer, f)
 
-# Save metrics
 metrics = {
     "train_accuracy": train_accuracy,
     "test_accuracy": test_accuracy,
