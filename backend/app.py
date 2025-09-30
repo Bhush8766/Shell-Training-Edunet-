@@ -5,7 +5,7 @@ import pickle
 from pathlib import Path
 
 app = Flask(__name__)
-CORS(app,origins=["https://my-frontend.onrender.com"])  # Allow cross-origin requests
+CORS(app,origins=["https://shell-training-edunet-08.onrender.com"])  # Allow cross-origin requests
 
 # Load model and vectorizer
 MODEL_PATH = Path(__file__).parent / "sms_spam_model.pkl"
