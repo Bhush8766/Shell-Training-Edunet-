@@ -1,0 +1,9 @@
+SPAM : 
+
+Congratulations! 🎉 You have won a $1000 gift card. Click here to claim your prize: http://fake-link.com
+
+
+Commands :
+
+python train_model.py  # only once to create model files
+python app.py          # start Flask server
