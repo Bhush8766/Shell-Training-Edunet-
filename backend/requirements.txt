@@ -1,7 +1,6 @@
+gunicorn
 flask
+flask-cors
 scikit-learn
 pandas
-
-
-gunicorn
-flask-cors" > requirements.txt
+numpy
