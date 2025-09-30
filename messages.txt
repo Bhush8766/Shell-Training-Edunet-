@@ -7,3 +7,24 @@ Commands :
 
 python train_model.py  # only once to create model files
 python app.py          # start Flask server
+
+
+
+async function sendMessage() {
+    const msg = document.getElementById("msg").value;
+
+    try {
+        const res = await fetch("https://shell-training-edunet-07.onrender.com/predict", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: msg })
+        });
+
+        const data = await res.json();
+        document.getElementById("output").innerText = "Prediction: " + data.prediction;
+
+    } catch (err) {
+        console.error(err);
+        document.getElementById("output").innerText = "Error connecting to backend";
+    }
+}
